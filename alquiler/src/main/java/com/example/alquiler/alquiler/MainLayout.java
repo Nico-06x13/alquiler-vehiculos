@@ -18,7 +18,8 @@ public class MainLayout extends AppLayout {
         addToNavbar(toggle, title);
 
         SideNav nav = new SideNav();
-        nav.addItem(new SideNavItem("Vehículos", VehiculosView.class, VaadinIcon.CAR.create()));
+        nav.addItem(new SideNavItem("Catálogo", VehiculosView.class, VaadinIcon.CAR.create()));
+        nav.addItem(new SideNavItem("Gestión", GestionView.class, VaadinIcon.EDIT.create()));
 
         addToDrawer(nav);
     }
