@@ -14,12 +14,14 @@ public class MainLayout extends AppLayout {
         title.getStyle().set("font-size", "var(--lumo-font-size-l)").set("margin", "0");
 
         DrawerToggle toggle = new DrawerToggle();
-
         addToNavbar(toggle, title);
 
         SideNav nav = new SideNav();
         nav.addItem(new SideNavItem("Catálogo", VehiculosView.class, VaadinIcon.CAR.create()));
         nav.addItem(new SideNavItem("Gestión", GestionView.class, VaadinIcon.EDIT.create()));
+        nav.addItem(new SideNavItem("Reservas", ReservasView.class, VaadinIcon.CALENDAR.create()));
+        nav.addItem(new SideNavItem("Devoluciones", DevolucionesView.class, VaadinIcon.CHECK_CIRCLE.create()));
+        nav.addItem(new SideNavItem("Reportes", ReportesView.class, VaadinIcon.CHART.create()));
 
         addToDrawer(nav);
     }

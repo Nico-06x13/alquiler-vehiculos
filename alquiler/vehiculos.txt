@@ -1,3 +1,8 @@
 AAA123;Toyota;Corolla;2022;Sedan;120000.0;Disponible;https://via.placeholder.com/150
 BBB456;Chevrolet;Tracker;2023;SUV;180000.0;Alquilado;https://via.placeholder.com/150
 CCC789;Renault;Duster;2021;SUV;150000.0;Mantenimiento;https://via.placeholder.com/150
+HHH;AUDI;RS6;2026;Hatchback;400.0;Disponible;https://emea-dam.audi.com/adobe/assets/urn:aaid:aem:c75da182-3dec-4294-bf53-c824fb17024b/as/1920x1080-rs6_2020_1530.jpg?width=1920
+JFK;FERRARI;La Ferrari;2026;Deportivo;400000.0;Alquilado;https://www.diariomotor.com/imagenes/2013/05/ferrari-laferrari-vista-frontal-503009.jpg?class=OG
+PZK123;MCLAREN;P1;2023;Deportivo;500000.0;En Mantenimiento;https://hips.hearstapps.com/hmg-prod/images/captura-de-pantalla-2024-01-10-a-las-15-02-15-659eb0609d2a5.png?crop=1.00xw:1.00xh;0,0&resize=1800:*
+JFK123;MCLAREN;P1;2023;Deportivo;5000000.0;En Mantenimiento;https://hips.hearstapps.com/hmg-prod/images/captura-de-pantalla-2024-01-10-a-las-15-02-15-659eb0609d2a5.png?crop=1.00xw:1.00xh;0,0&resize=1800:*
+JFK444;KIA;K3;2027;Sedán;2000000.0;Disponible;https://cdn.kia.com.co/K3_Banner_interna_Large_Screen_2048x2078_a12617f6d4.jpg

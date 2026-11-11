@@ -35,7 +35,7 @@ public class GestionView extends VerticalLayout {
 
         add(new H2("Registrar Nuevo Vehículo"));
 
-        tipo.setItems("Sedan", "SUV", "Camioneta", "Deportivo", "Hatchback");
+        tipo.setItems("Sedán", "SUV", "Camioneta", "Deportivo", "Hatchback");
         estado.setItems("Disponible", "Alquilado", "Mantenimiento");
 
         FormLayout formLayout = new FormLayout();
@@ -63,23 +63,38 @@ public class GestionView extends VerticalLayout {
         dialog.add(new Span("¿Deseas guardar el vehículo con placa " + placa.getValue() + "?"));
 
         Button btnConfirmar = new Button("Confirmar", e -> {
+            // 1. Capturar la URL/Ruta digitada en el campo del formulario
+            String urlImagen = fotoUrl.getValue();
+            if (urlImagen == null || urlImagen.trim().isEmpty()) {
+                urlImagen = "images/duster.png"; // Fallback si no escriben nada
+            }
+
+            // 2. Extraer los valores numéricos y nulos de forma segura
+            int anioVal = (anio.getValue() != null) ? anio.getValue().intValue() : 2024;
+            String tipoVal = (tipo.getValue() != null) ? tipo.getValue() : "Sedán";
+            double tarifaVal = (tarifaDia.getValue() != null) ? tarifaDia.getValue() : 0.0;
+            String estadoVal = (estado.getValue() != null) ? estado.getValue() : "Disponible";
+
+            // 3. Crear el objeto Vehiculo pasando la imagen dinámica digitada
             Vehiculo nuevo = new Vehiculo(
-                placa.getValue(),
-                marca.getValue(),
-                modelo.getValue(),
-                anio.getValue() != null ? anio.getValue().intValue() : 2024,
-                tipo.getValue() != null ? tipo.getValue() : "Sedan",
-                tarifaDia.getValue() != null ? tarifaDia.getValue() : 0.0,
-                estado.getValue() != null ? estado.getValue() : "Disponible",
-                fotoUrl.getValue()
+                placa.getValue().toUpperCase().trim(),
+                marca.getValue().trim(),
+                modelo.getValue().trim(),
+                anioVal,
+                tipoVal,
+                tarifaVal,
+                estadoVal,
+                urlImagen.trim()
             );
 
+            // 4. Guardar en el servicio estático
             VehiculoService.guardarVehiculo(nuevo);
             dialog.close();
-            limpiarFormulario();
 
-            Notification exito = Notification.show("Vehículo guardado exitosamente");
-            exito.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
+            Notification notification = Notification.show("¡Vehículo guardado con éxito!");
+            notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
+
+            limpiarFormulario();
         });
         btnConfirmar.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
 
